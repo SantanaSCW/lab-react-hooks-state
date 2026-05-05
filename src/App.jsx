@@ -39,9 +39,11 @@ const App = () => {
         <option value="Dairy">Dairy</option>
       </select>
 
-      <ProductList />
+      <ProductList category={category} addToCart={addToCart}/>
+
 
       {/* TODO: Implement and render Cart component */}
+      <Cart cart={cart} />
     </div>
   )
 }

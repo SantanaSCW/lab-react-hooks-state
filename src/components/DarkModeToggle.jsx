@@ -3,21 +3,16 @@ import { useState } from 'react';
 
 
 
-function DarkModeToggle(){
-    const [toggle, setToggle] = useState(false)
-
+function DarkModeToggle({darkMode, setDarkMode}){
     
 
-
     return (
-        <div style={{
-            backgroundColor : toggle ? 'white' : 'black'
-        }}>
-            <button onClick ={() => setToggle(!toggle)}>
-                {toggle ? 'light mode':'dark mode'}
+
+            <button onClick ={() => setDarkMode(!darkMode)}>
+                {darkMode ? 'light mode':'dark mode'}
             </button>
 
-        </div>
+    
     )
 
 

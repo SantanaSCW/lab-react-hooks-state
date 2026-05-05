@@ -29,7 +29,7 @@ const App = () => {
       </p>
 
       {/* TODO: Render DarkModeToggle and implement dark mode functionality */}
-      <DarkModeToggle />
+      <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode}/>
 
       {/* TODO: Implement category filter dropdown */}
       <label>Filter by Category: </label>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/ProductCard.module.css'
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, addToCart }) => {
 
   const [item, addItem] = useState([])
   return (

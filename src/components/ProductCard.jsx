@@ -3,7 +3,7 @@ import styles from '../styles/ProductCard.module.css'
 
 const ProductCard = ({ product, addToCart }) => {
 
-  const [item, addItem] = useState([])
+
   return (
     <div
       className={`${styles.card} ${!product.inStock ? styles.outOfStock : ''}`}

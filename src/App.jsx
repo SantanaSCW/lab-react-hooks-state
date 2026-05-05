@@ -8,7 +8,7 @@ const App = () => {
   const [darkMode ,setDarkMode] = useState(false)
 
   // TODO: Implement state for cart management
-  const [Cart, setCart] = useState([])
+  const [cart, setCart] = useState([])
   // TODO: Implement state for category filtering
   const [category, setCategory] = useState('all')
 
@@ -33,7 +33,7 @@ const App = () => {
 
       {/* TODO: Implement category filter dropdown */}
       <label>Filter by Category: </label>
-      <select>
+      <select value={category} onChange={(e) => setCategory(e.target.value)}>
         <option value="all">All</option>
         <option value="Fruits">Fruits</option>
         <option value="Dairy">Dairy</option>

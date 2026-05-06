@@ -16,3 +16,4 @@ function ProductList({ category, addToCart }) {
     </div>
   );
 }
+export default ProductList;

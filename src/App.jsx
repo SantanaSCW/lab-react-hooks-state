@@ -4,7 +4,7 @@ import DarkModeToggle from './components/DarkModeToggle';
 
 const sampleProducts = [
   { id: 1, name: 'Laptop', category: 'Electronics', price: 999 },
-  { id: 2, name: 'Apple', category: 'Fruits', price: 1 },
+  { id: 2, name: 'Apple', category: 'Fruits', price: 1 }, // Must be exactly 'Apple'
   { id: 3, name: 'Smartphone', category: 'Electronics', price: 699 },
   { id: 4, name: 'Headphones', category: 'Electronics', price: 199 },
 ];

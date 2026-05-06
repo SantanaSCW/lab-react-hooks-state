@@ -2,7 +2,8 @@ import React from 'react';
 import ProductCard from './ProductCard';
 
 const ProductList = ({ products, addToCart }) => {
-  if (!products || products.length === 0) {
+  // If the filtered list is empty, show this exact text
+  if (products.length === 0) {
     return <p>No products available.</p>;
   }
 

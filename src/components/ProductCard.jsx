@@ -2,11 +2,10 @@ import React from 'react';
 
 const ProductCard = ({ product, addToCart }) => {
   return (
-    <div className="product-card">
+    <div className="product-card" data-testid={`product-${product.id}`}>
       <h3>{product.name}</h3>
-      <p>{product.category}</p>
+      <p>Category: {product.category}</p>
       <p>${product.price}</p>
-      {/* The test specifically looks for a button that triggers addToCart */}
       <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   );

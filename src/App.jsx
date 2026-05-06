@@ -1,54 +1,49 @@
 import React, { useState } from 'react';
 import ProductList from './components/ProductList';
-import DarkModeToggle from './components/DarkModeToggle';
 import Cart from './components/Cart';
+import DarkModeToggle from './components/DarkModeToggle';
 
-function App() {
-  // 1. State Management
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const App = () => {
+  // 1. State for Dark Mode
+  const [darkMode, setDarkMode] = useState(false);
+
+  // 2. State for Cart
   const [cart, setCart] = useState([]);
-  const [category, setCategory] = useState("All");
 
-  // 2. Add to Cart Logic
+  // 3. Mock Data for Products
+  const products = [
+    { id: 1, name: 'Laptop', price: 999 },
+    { id: 2, name: 'Smartphone', price: 699 },
+    { id: 3, name: 'Headphones', price: 199 },
+  ];
+
+  // 4. Helper function to toggle Dark Mode
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  // 5. Helper function to add items to cart
   const addToCart = (product) => {
-    // Spreading the existing cart and adding the new product object
     setCart([...cart, product]);
   };
 
   return (
-    /* The className toggles based on state to fulfill the CSS challenge */
-    <div className={isDarkMode ? "dark-mode" : "light-mode"}>
+    // Apply a CSS class based on darkMode state
+    <div className={darkMode ? 'app dark-mode' : 'app'}>
+      <h1>My Shopping App</h1>
       
-      {/* 
-         IMPORTANT: We pass 'isDarkMode' to the 'darkMode' prop 
-         to match the variable names in your DarkModeToggle component.
-      */}
-      <DarkModeToggle 
-        darkMode={isDarkMode} 
-        setDarkMode={setIsDarkMode} 
-      />
+      {/* Pass the toggle function as a prop */}
+      <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
-      <div className="filter-container">
-        <label htmlFor="category-select">Filter by Category: </label>
-        <select 
-          id="category-select"
-          onChange={(e) => setCategory(e.target.value)}
-          value={category}
-        >
-          <option value="All">All</option>
-          <option value="Produce">Produce</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Bakery">Bakery</option>
-        </select>
+      <div className="main-content">
+        {/* Pass products and the addToCart function as props */}
+        <ProductList products={products} addToCart={addToCart} />
+        
+        {/* Pass the cart state as a prop */}
+        <Cart cart={cart} />
       </div>
-
-      {/* Pass category and addToCart function down to ProductList */}
-      <ProductList category={category} addToCart={addToCart} />
-      
-      {/* Pass the cart array to the Cart component */}
-      <Cart items={cart} />
     </div>
   );
-}
+};
 
 export default App;

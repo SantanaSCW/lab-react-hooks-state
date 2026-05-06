@@ -1,16 +1,15 @@
 import React from 'react';
 
-// The name here MUST be ProductCard
 const ProductCard = ({ product, addToCart }) => {
   return (
     <div className="product-card">
       <h3>{product.name}</h3>
+      <p>{product.category}</p>
       <p>${product.price}</p>
-      {/* Ensure this button exists for the "Add to Cart" test */}
+      {/* The test specifically looks for a button that triggers addToCart */}
       <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   );
 };
 
-// This name must match the function name above
 export default ProductCard;

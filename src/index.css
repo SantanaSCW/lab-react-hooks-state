@@ -66,3 +66,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.dark-mode {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}

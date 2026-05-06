@@ -1,26 +1,18 @@
-import React from 'react'
-import ProductCard from './ProductCard'
+function ProductList({ category, addToCart }) {
+  // Assuming 'products' is your array of grocery items
+  const filteredProducts = products.filter(product => 
+    category === "All" || product.category === category
+  );
 
-// Sample product data (for display purposes only)
-export const sampleProducts = [
-  { id: 1, name: 'Apple', price: '$1.00', category: 'Fruits', inStock: true },
-  { id: 2, name: 'Milk', price: '$2.50', category: 'Dairy', inStock: false }
-]
-
-const ProductList = ({category, addToCart}) => {
-  const filtered = category === 'all' ? sampleProducts : sampleProducts.filter((p) => p.category === category)
   return (
-    <div>
-      <h2>Available Products</h2>
-
-      {/* TODO: Filter sample data using selected category */}
-      {filtered.length === 0 ? <p>No products available</p>
-      
-      : filtered.map((product) => (
-        <ProductCard key={product.id} product={product} addToCart={addToCart}/>
+    <div className="product-list">
+      {filteredProducts.map(product => (
+        <ProductCard 
+          key={product.id} 
+          product={product} 
+          addToCart={addToCart} 
+        />
       ))}
     </div>
-  )
+  );
 }
-
-export default ProductList

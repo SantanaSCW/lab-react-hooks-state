@@ -1,23 +1,11 @@
 import { useState } from 'react';
 
-
-
-
-function DarkModeToggle({darkMode, setDarkMode}){
-    
-
+function DarkModeToggle({ darkMode, setDarkMode }) {
     return (
-
-            <button onClick ={() => setDarkMode(!darkMode)}>
-                {darkMode ? 'Toggle light mode':'Toggle dark mode'}
-            </button>
-
-    
-    )
-
-
-
-
+        <button onClick={() => setDarkMode(!darkMode)}>
+            {darkMode ? 'Toggle Light Mode' : 'Toggle Dark Mode'}
+        </button>
+    );
 }
 
 export default DarkModeToggle;

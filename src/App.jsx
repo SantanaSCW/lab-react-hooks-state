@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ProductList from './components/ProductList';
 import DarkModeToggle from './components/DarkModeToggle';
-
+// In App.js - Make sure this array matches the lab requirements exactly
 const sampleProducts = [
-  { id: 1, name: 'Laptop', category: 'Electronics', price: 999 },
-  { id: 2, name: 'Apple', category: 'Fruits', price: 1 }, // Must be exactly 'Apple'
-  { id: 3, name: 'Smartphone', category: 'Electronics', price: 699 },
-  { id: 4, name: 'Headphones', category: 'Electronics', price: 199 },
+  { id: 1, name: 'Apple', category: 'Fruits', price: 1 },
+  { id: 2, name: 'Banana', category: 'Fruits', price: 0.5 },
+  { id: 3, name: 'Milk', category: 'Dairy', price: 2 },
+  { id: 4, name: 'Bread', category: 'Bakery', price: 1.5 },
 ];
 
 function App() {

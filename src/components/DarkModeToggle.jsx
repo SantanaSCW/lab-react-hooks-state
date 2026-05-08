@@ -3,7 +3,8 @@ import React from 'react';
 const DarkModeToggle = ({ darkMode, toggleDarkMode }) => {
   return (
     <button onClick={toggleDarkMode}>
-      Toggle {darkMode ? 'Light' : 'Dark'} Mode
+      {/* Remove the word 'Toggle' to satisfy the exact string match tests */}
+      {darkMode ? 'Light Mode' : 'Dark Mode'}
     </button>
   );
 };
